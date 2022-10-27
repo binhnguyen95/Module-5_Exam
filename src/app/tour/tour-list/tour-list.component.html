@@ -1,0 +1,24 @@
+<br>
+<h1 style="text-align: center">Tours List</h1>
+<br>
+<table class="table table-borderless container" >
+  <thead>
+  <tr>
+    <td>ID</td>
+    <td>Title</td>
+    <td>Price</td>
+    <td>Description</td>
+    <td colspan="2" style="text-align: center">Action</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let to of tours; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{to.title}}</td>
+    <td>{{to.price}}</td>
+    <td>{{to.description}}</td>
+    <td style="text-align: center"><button type="button" class="btn btn-outline-secondary btn-rounded" data-mdb-ripple-color="dark" [routerLink]="['/tours/edit',to.id]" style="width: 100%">Edit</button></td>
+    <td style="text-align: center"><button type="button" class="btn btn-outline-danger btn-rounded" data-mdb-ripple-color="dark" [routerLink]="['/tours/delete',to.id]" style="width: 100%">Delete</button></td>
+  </tr>
+  </tbody>
+</table>
